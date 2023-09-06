@@ -35,9 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
   typeWord();
   blinkCursor();
 
-
-
-
   // Efecto de cambio de caja
   const emojiLeft = document.querySelector('.emoji-left');
   const emojiRight = document.querySelector('.emoji-right');
@@ -53,29 +50,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
   animateEmojis();
 
+  document.querySelectorAll('pre code').forEach((block) => {
+    hljs.highlightBlock(block);
+  });
 
-    document.querySelectorAll('pre code').forEach((block) => {
-      hljs.highlightBlock(block);
-    });
+  // Actualizar contenido dinámicamente
+  const dynamicContent = document.querySelector('.dynamic-content');
+  const updateButton = document.getElementById('update-button');
 
+  updateButton.addEventListener('click', function () {
+    dynamicContent.textContent = '¡Contenido actualizado!';
+  });
 
-
-
-
-
-    // Actualizar contenido dinámicamente
-    const dynamicContent = document.querySelector('.dynamic-content');
-    const updateButton = document.getElementById('update-button');
-
-    updateButton.addEventListener('click', function () {
-      dynamicContent.textContent = '¡Contenido actualizado!';
-    });
-
-
-
-
-    
-    // Mostrar alerta al enviar el formulario
+  // Mostrar alerta al enviar el formulario
   const submitButtons = document.querySelectorAll('.submit-button');
   const contactForms = document.querySelectorAll('.contact-form-element');
 

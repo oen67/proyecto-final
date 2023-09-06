@@ -1,0 +1,318 @@
+
+<head>
+  <title>thirdweb</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/atom-one-dark.min.css">
+    <script src="script.js"></script>
+  </head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <div class="menu">
+        <ul class="menu-list">
+          <li class="menu-item">
+             <span class="triangle"></span>
+            <a href="#">Products</a>
+            <ul class="submenu">
+              <li><a href="#">SDKs</a></li>
+              <li><a href="#">Auth</a></li>
+              <li><a href="#">Explore</a></li>
+              <li><a href="#">Publish</a></li>
+              <li><a href="#">Solidity SDK</a></li>
+              <li><a href="#">Deploy</a></li>
+              <li><a href="#">Dashboards</a></li>
+              <li><a href="#">Storage</a></li>
+              <li><a href="#">UI Components</a></li>
+              <li><a href="#">Wallet SDK</a></li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <span class="triangle"></span>
+            <a href="#">Solutions</a>
+            <ul class="submenu">
+              <li><a href="#">CommerceKit</a></li>
+              <li><a href="#">GamingKit</a></li>
+              <li><a href="#">Minting</a></li>
+              <li><a href="#">Loyalty</a></li>
+            </ul>
+          </li>
+          <li class="menu-item">    
+            <span class="triangle"></span>
+            <a href="#">Resources</a>
+            <ul class="submenu">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Docs</a></li>
+              <li><a href="#">Templates</a></li>
+              <li><a href="#">Guides</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Open Source</a></li>
+              <li><a href="#">Events</a></li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <span class="triangle"></span>
+            <a href="#">Docs</a>
+            <ul class="submenu">
+              <!-- Agregar elementos de submenu aquí si es necesario -->
+            </ul>
+          </li>
+        </ul>
+      </div>
+      </nav>
+    </header>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="left-content">
+          <h1 class="hero-title">The fastest way to build web3 apps</h1>
+          <p class="hero-subtitle">SDKs in every language, smart contracts, tools, and infrastructure for web3 development</p>
+          <div class="cta-buttons">
+            <a href="#" class="cta-button">Get Started ⚡️</a>
+            <div class="typing-frame">
+              <p class="typing-text">$ npx thirdweb</p>
+              <p class="typing-text typing-animation">create, deploy, publish<span class="cursor"></span></p>
+            </div>
+          </div>
+      </div>
+      <div class="right-content">
+        <img src="https://cdn.pixabay.com/photo/2018/02/04/17/39/crypto-currency-3130382_1280.jpg" alt="hero image" width="600"/>
+      </div>
+    </div>
+  </section>
+
+              <section class="features green-bg">
+                    <h3 class="feature-title">Complete</h3>
+                    <h2 class="feature-title">All-in-one solution.</h2>
+
+              <div class="feature-box">
+                <div class="emoji-left">🕹️</div>
+                <h5 class="feature-title">DEV TOOLS:</h5>
+                <ul class="word-list">
+                  <li><h5>Solidity SDK</h5></li>
+                  <li><h5>Explore</h5></li>
+                  <li><h5>SDKs</h5></li>
+                  <li><h5>UI Components</h5></li>
+                  <li><h5>Deploy</h5></li>
+                  <li><h5>Publish</h5></li>
+                  <li><h5>Dashboard</h5></li>
+                </ul>
+              </div>
+                    
+              <div class="feature-box">
+                <div class="emoji-right">🌐</div>
+                <h5 class="feature-title">INFRASTRUCTURE:</h5>
+                <ul class="word-list">
+                  <li><h5>Data Feeds</h5></li>
+                  <li><h5>Gasless</h5></li>
+                  <li><h5>Fiat On-Ramp</h5></li>
+                  <li><h5>Decentralized Storage</h5></li>
+                  <li><h5>RPC Edge</h5></li>
+                  <li><h5>Wallet</h5></li>
+                  <li><h5>Auth</h5></li>
+                </ul>
+                </div>
+
+                <div class="emoji-list">
+                  <div class="emoji-vertical-left">🎮</div>
+                  <div class="emoji-vertical-right">🌐</div>
+                </div>
+              </div>
+            </section>
+            
+                  <section class="features gray-bg">
+                    <h3 class="feature-title">Simple</h3>
+                    <h2 class="feature-title">Web3 made easy</h2>
+                </div>
+              <div class="code-box-container">
+                  <div class="boxes">
+                      <div class="box-3">
+                          <button class="copy-button">Copy</button>
+                          <div class="box-title">Without thirdweb (88 lines)</div>
+                        <pre class="code"><code class="rainbow-code">// Fetch all nfts from a erc721 contract on polygon.
+
+import { ethers, BigNumberish, BigNumber } from "ethers";
+
+const provider = ethers.providers.getDefaultProvider(
+  "https://polygon-rpc.com/"
+);
+const contractAddress = "0x...";
+
+// copy pasted from etherscan or contract project
+const contractAbi = [ ... ];
+
+const contract = new ethers.Contract(contractAddress, contractAbi, provider);
+
+async function ownerOf(tokenId: BigNumberish): Promisestring> {
+  return await contract.ownerOf(tokenId);
+}
+
+async function fetchTokenMetadata(tokenId: BigNumberish, tokenUri: string) {
+  const parsedUri = tokenUri.replace(
+    "{id}",
+    ethers.utils.hexZeroPad(BigNumber.from(tokenId).toHexString(), 32).slice(2)
+  );
+  let jsonMetadata;
+  try {
+    const res = await fetch(
+      `https://ipfs.io/ipfs/${parsedUri.replace("ipfs://", "")}`
+    );
+    jsonMetadata = await res.json();
+  } catch (err) {
+    const unparsedTokenIdUri = tokenUri.replace(
+      "{id}",
+      BigNumber.from(tokenId).toString()
+    );
+    try {
+      const res = await fetch(
+        `https://ipfs.io/ipfs/${unparsedTokenIdUri.replace("ipfs://", "")}`
+      );
+      jsonMetadata = await res.json();
+    } catch (e: any) {
+      console.warn(
+        `failed to get token metadata: ${JSON.stringify({
+          tokenId: tokenId.toString(),
+          tokenUri,
+        })} -- falling back to default metadata`
+      );
+      jsonMetadata = {};
+    }
+  }
+
+  return {
+    ...jsonMetadata,
+    id: BigNumber.from(tokenId).toString(),
+    uri: tokenUri,
+  };
+}
+
+async function getTokenMetadata(tokenId: BigNumberish) {
+  const tokenUri = await contract.tokenURI(tokenId);
+  if (!tokenUri) {
+    throw new Error("no token URI");
+  }
+  return fetchTokenMetadata(tokenId, tokenUri);
+}
+
+async function get(tokenId: BigNumberish) {
+  const [owner, metadata] = await Promise.all([
+    ownerOf(tokenId).catch(() => ethers.constants.AddressZero),
+    getTokenMetadata(tokenId).catch(() => ({
+      id: tokenId.toString(),
+      uri: "",
+    })),
+  ]);
+  return { owner, metadata, type: "ERC721", supply: 1 };
+}
+
+async function getAll(paginationStart?: number, pageCount?: number) {
+  const start = BigNumber.from(paginationStart || 0).toNumber();
+  const count = BigNumber.from(pageCount || 1000).toNumber();
+
+  const maxSupply = await contract.totalSupply();
+  const maxId = Math.min(maxSupply.toNumber(), start + count);
+  return await Promise.all(
+    [...Array(maxId - start).keys()].map((i) => get((start + i).toString()))
+  );
+}
+
+const nfts = await getAll(); </code>
+</pre>
+                      </div>
+                    <div class="box-3">
+                      <button class="copy-button">Copy</button>
+                        <div class="box-title">With thirdweb (7 lines)</div>
+                        <pre class="code"><code class="rainbow-code">// Fetch all nfts from a erc721 contract on polygon.
+
+                          import { ThirdwebSDK } from "@thirdweb-dev/sdk";
+                          
+                          const sdk = new ThirdwebSDK("polygon");
+                          const contract = await sdk.getContract("0x..");
+                          const nfts = await contract.erc721.getAll();
+                          </code>
+                        </pre>
+                    </div>
+                  </section>
+                </div>
+              </div>
+
+                  <section class="contact">
+                    <div class="container">
+                      <h2 class="section-title">Contact Us</h2>
+                      <div class="contact-form">
+                        <form class="contact-form-element">
+                          <input type="text" class="name-input" placeholder="Your Name">
+                          <input type="email" class="email-input" placeholder="Your Email">
+                          <textarea class="message-input" placeholder="Your Message"></textarea>
+                          <button type="submit" class="submit-button">Send</button>
+                        </form>
+                      </div>
+                    </div>
+                  </section>
+
+                    
+  <footer class="footer">
+  <div class="container">
+    <div class="column branding">
+      thirdweb
+    </div>
+    <div class="column">
+      <h5>Products</h5>
+      <ul>
+        <li><a href="#">SDKs</a></li>
+        <li><a href="#">Auth</a></li>
+        <li><a href="#">Explore</a></li>
+        <li><a href="#">Publish</a></li>
+        <li><a href="#">Solidity SDK</a></li>
+        <li><a href="#">Deploy</a></li>
+        <li><a href="#">Dashboards</a></li>
+        <li><a href="#">Storage</a></li>
+        <li><a href="#">UI Components</a></li>
+        <li><a href="#">Wallet SDK</a></li>
+      </ul>
+    </div>
+    <div class="column">
+      <h5>SDKs</h5>
+      <ul>
+        <li><a href="#">JavaScript</a></li>
+        <li><a href="#">React</a></li>
+        <li><a href="#">Python</a></li>
+        <li><a href="#">Contracts</a></li>
+      </ul>
+      
+      <h5>Solutions</h5>
+      <ul>
+        <li><a href="#">CommerceKit</a></li>
+        <li><a href="#">GamingKit</a></li>
+        <li><a href="#">Minting</a></li>
+      </ul>
+      
+      <h5>Community</h5>
+      <ul>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Ambassadors</a></li>
+        <li><a href="#">thirdweb learn</a></li>
+      </ul>
+    </div>
+    <div class="column">
+      <h5>Networks</h5>
+      <ul>
+        <li><a href="#">Solana</a></li>
+        <li><a href="#">Chainlist</a></li>
+      </ul>
+      
+      <h5>Faucets</h5>
+      <ul>
+        <li><a href="#">Solana</a></li>
+      </ul>
+      
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
